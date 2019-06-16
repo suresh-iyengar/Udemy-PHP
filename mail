@@ -1,0 +1,19 @@
+<?php 
+
+$mailto = 'suresh.iyengar@buexecution.com'; //Mailto here
+$from_mail = 'service@buexecution.com'; //Mailfrom here
+$subject = 'SMALL BUSINESS EVALUATION LEVEL - ASSESSMENT SUMMARY';
+$message = "<h3>Dear Suresh,</h3>
+
+			<p>Thanks again, for buying our Small Business Evaluation. As we promised, we are sending you the report.</p>";
+
+		$header2 = "MIME-Version: 1.0\r\n";
+		$header2 .= "From: ".$from_mail." \r\n"; 
+		$header2 .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+		// $header2 .= "Bcc: service@buexecution.com \r\n";
+		$header2 .= "Return-Path: $from_mail\r\n";
+
+		mail($mailto,$subject,$header2, "-r".$from_mail);
+		echo "$message";
+
+?>
